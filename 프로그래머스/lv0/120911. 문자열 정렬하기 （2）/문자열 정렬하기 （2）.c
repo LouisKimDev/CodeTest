@@ -7,14 +7,11 @@ char* solution(const char* my_string) {
     // return 값은 malloc 등 동적 할당을 사용해주세요. 할당 길이는 상황에 맞게 변경해주세요.
     char* answer = (char*)malloc(my_string);
     strcpy(answer,my_string);
-    for(int i = 0; answer[i]; i++){
-        answer[i]<95?answer[i] ^= 32:0;
-        
-    }
-    for(int i = 0; answer[i]; i++){
-        for(int j = 0; answer[j]; j++){
+    for(int i = 0; answer[i]; i++)answer[i]<95?answer[i] ^= 32:0;
+
+    for(int i = 0; answer[i]; i++)
+        for(int j = 0; answer[j]; j++)
             answer[i]<answer[j] ? (answer[i] ^= answer[j] ^= answer[i] ^= answer[j]) : 0;
-        }
-    }
+
     return answer;
 }
