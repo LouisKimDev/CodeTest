@@ -4,9 +4,7 @@
 
 // array_len은 배열 array의 길이입니다.
 int solution(int array[], size_t array_len, int n) {
-    int i, answer = 0;
-    for(i = 0; i < array_len; i++){
-        array[i]==n?answer++:0;
-    }
+    int answer, i;
+    for(answer = i = 0; i < array_len; i++) answer += array[i]==n;
     return answer;
 }
