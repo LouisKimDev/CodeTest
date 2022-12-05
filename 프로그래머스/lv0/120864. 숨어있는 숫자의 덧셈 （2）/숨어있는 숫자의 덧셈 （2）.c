@@ -8,15 +8,8 @@ int solution(const char* my_str) {
     int t, i;
     for(i = 0; my_str[i]; i++){
         t = my_str[i];
-        if(t>='0'&& t<='9'){
-            n = n * 10 + t - '0';
-        }
-        else
-        {
-            ans += n; n = 0;
-        }
-            
-        printf("%d %d %c\n", n, ans, t);
+        if(t>='0'&& t<='9') n = n * 10 + t - '0';
+        else {ans += n; n = 0;}
     }
     ans += n;
     return ans;
